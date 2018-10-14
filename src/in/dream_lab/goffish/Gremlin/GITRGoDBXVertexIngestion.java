@@ -171,7 +171,7 @@ public void printVertices() {
 	GraphTraversal<Vertex, Vertex> k = titanGraph.traversal().V();
 	while(k.hasNext()) {
 		Vertex v = k.next();
-		System.out.println("V:" + v.value("vid").toString() + "," + v.value("contr"));
+		System.out.println("V:" + v.value("rid").toString() + "," + v.value("contr"));
 	}
 }
 
@@ -187,12 +187,12 @@ public GITRGoDBXVertexIngestion(StandardTitanGraph titanGraph) {
   
   public GITRGoDBXVertexIngestion() { 
 //      titanGraph = TitanFactory.build().set("storage.backend","cassandra").set("storage.cassandra.keyspace","recreated").set("storage.connection-timeout","5000000").set("storage.setup-wait","2000000").set("index.search.backend","elasticsearch").set("storage.hostname","10.0.0.12,10.0.0.13,10.0.0.14,10.0.0.15").set("index.search.hostname","10.0.0.12,10.0.0.13,10.0.0.14,10.0.0.15").set("cache.db-cache","true").open();
-    titanGraph = TitanFactory.build().set("storage.backend","cassandra").set("ids.block-size","500000").set("storage.batch-loading", true).set("storage.cassandra.keyspace","recreated").set("index.search.backend","elasticsearch").set("storage.hostname","192.168.0.15,192.168.0.16,192.168.0.17,192.168.0.18,192.168.0.19,192.168.0.20,192.168.0.21,192.168.0.22,192.168.0.27").set("index.search.hostname","192.168.0.27,192.168.0.28,192.168.0.29,192.168.0.30").open();
+    titanGraph = TitanFactory.build().set("storage.backend","cassandra").set("ids.block-size","500000").set("storage.batch-loading", true).set("storage.cassandra.keyspace","recreated").set("index.search.backend","elasticsearch").set("storage.hostname","192.168.0.12,192.168.0.13,192.168.0.15,192.168.0.16,192.168.0.17,192.168.0.18,192.168.0.19,192.168.0.20,192.168.0.21,192.168.0.22,192.168.0.23,192.168.0.24,192.168.0.25,192.168.0.26,192.168.0.27").set("index.search.hostname","192.168.0.24,192.168.0.25,192.168.0.26,192.168.0.27").open();
   } 
    
  public void open() {
 	 if(!titanGraph.isOpen())
-	 titanGraph = TitanFactory.build().set("storage.backend","cassandra").set("ids.block-size","500000").set("storage.batch-loading", true).set("storage.cassandra.keyspace","recreated").set("index.search.backend","elasticsearch").set("storage.hostname","192.168.0.15,192.168.0.16,192.168.0.17,192.168.0.18,192.168.0.19,192.168.0.20,192.168.0.21,192.168.0.22,192.168.0.27").set("index.search.hostname","192.168.0.27,192.168.0.28,192.168.0.29,192.168.0.30").open();
+		 titanGraph = TitanFactory.build().set("storage.backend","cassandra").set("ids.block-size","500000").set("storage.batch-loading", true).set("storage.cassandra.keyspace","recreated").set("index.search.backend","elasticsearch").set("storage.hostname","192.168.0.12,192.168.0.13,192.168.0.15,192.168.0.16,192.168.0.17,192.168.0.18,192.168.0.19,192.168.0.20,192.168.0.21,192.168.0.22,192.168.0.23,192.168.0.24,192.168.0.25,192.168.0.26,192.168.0.27").set("index.search.hostname","192.168.0.24,192.168.0.25,192.168.0.26,192.168.0.27").open();
  }
  
  public void close() {
